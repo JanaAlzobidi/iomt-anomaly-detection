@@ -78,12 +78,15 @@ The class distribution and top-feature plots are shown in the notebook outputs. 
 ## Loading
 
 ```python
+!git clone https://github.com/JanaAlzobidi/iomt-anomaly-detection.git
 import sys
-REPO = "/content/iomt-anomaly-detection"   # after: git clone https://github.com/JanaAlzobidi/iomt-anomaly-detection.git
+REPO = "/content/iomt-anomaly-detection"
 sys.path.insert(0, REPO)
 DATA_DIR = f"{REPO}/data"
-from evaluate import load_data
+RESULTS_DIR = f"{REPO}/results"
+from evaluate import load_data, reconstruction_errors, evaluate, compare_percentiles
 
+SEED = 42
 X_train, X_val, X_test, y_test, attack_test = load_data(DATA_DIR)
 ```
 
