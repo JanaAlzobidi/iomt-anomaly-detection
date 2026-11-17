@@ -1,0 +1,9 @@
+# data lives on the shared Drive folder, not in the repo
+*.npz
+*.pkl
+*.parquet
+*.zip
+
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
