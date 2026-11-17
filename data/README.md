@@ -1,6 +1,6 @@
 # Data: CICIoMT2024 (WiFi + MQTT)
 
-This folder prepares the dataset shared by every model in the project. `01_data_prep.ipynb` downloads the raw data from Zenodo, builds the splits and saves the output files, which are committed to the repository in `data/` (about 10 MB). The raw parquet file (9M rows) is not stored in the repository.
+This folder holds the dataset shared by every model in the project, and the notebook that builds it. `01_data_prep.ipynb` downloads the raw data from Zenodo, builds the splits and saves the output files listed below, which are stored here (about 10 MB). The raw parquet file (9M rows) is not stored in the repository.
 
 ## Source
 
@@ -70,7 +70,8 @@ After scaling, training data lies in [0, 1]. Test values reach 8.0 for some atta
 | `test.npz` | `X` (42,893 × 40), `y` (0 = benign, 1 = attack), `attack_type`, `category` |
 | `scaler.pkl` | MinMaxScaler fitted on the training set |
 | `config.json` | Feature list and order, log1p columns, removed columns, split sizes, seed |
-| `figures/` | Class distribution and top-feature plots |
+
+The class distribution and top-feature plots are shown in the notebook outputs. The notebook writes to `DATA_DIR` (a Google Drive folder in our runs); to regenerate the files, run it and copy the outputs into this folder.
 
 `scaler.pkl` and `config.json` are needed at inference time: `preprocess_raw(df_raw, DATA_DIR)` in `evaluate.py` uses them to transform raw rows exactly like the training data.
 
