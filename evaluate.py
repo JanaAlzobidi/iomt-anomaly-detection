@@ -200,6 +200,7 @@ def _plot(test_scores, y_test, val_scores, thr, attacks_only, model_name, save_d
 
 
 def _save_result(res: dict, save_dir: str):
+    os.makedirs(save_dir, exist_ok=True)
     path = os.path.join(save_dir, "results.csv")
     cols = ["model", "person", "roc_auc", "pr_auc", "f1", "precision", "recall",
             "false_alarm_rate", "weakest_attack", "weakest_attack_recall",
