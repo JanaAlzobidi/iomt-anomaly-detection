@@ -1,6 +1,6 @@
 # Data: CICIoMT2024 (WiFi + MQTT)
 
-This folder prepares the dataset shared by every model in the project. Run `01_data_prep.ipynb` once; it downloads the data, builds the splits and saves the files below to the shared Drive folder (`IoMT_project/data`). The data files themselves are not stored in the repository.
+This folder prepares the dataset shared by every model in the project. `01_data_prep.ipynb` downloads the raw data from Zenodo, builds the splits and saves the output files, which are committed to the repository in `data/` (about 10 MB). The raw parquet file (9M rows) is not stored in the repository.
 
 ## Source
 
@@ -78,8 +78,9 @@ After scaling, training data lies in [0, 1]. Test values reach 8.0 for some atta
 
 ```python
 import sys
-DATA_DIR = "/content/drive/MyDrive/IoMT_project/data"
-sys.path.insert(0, DATA_DIR)
+REPO = "/content/iomt-anomaly-detection"   # after: git clone https://github.com/JanaAlzobidi/iomt-anomaly-detection.git
+sys.path.insert(0, REPO)
+DATA_DIR = f"{REPO}/data"
 from evaluate import load_data
 
 X_train, X_val, X_test, y_test, attack_test = load_data(DATA_DIR)

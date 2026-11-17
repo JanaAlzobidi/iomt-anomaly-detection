@@ -1,6 +1,4 @@
-# data lives on the shared Drive folder, not in the repo
-*.npz
-*.pkl
+# raw data is downloaded from Zenodo by data_prep/01_data_prep.ipynb (too large for git)
 *.parquet
 *.zip
 
