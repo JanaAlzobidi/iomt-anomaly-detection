@@ -1,2 +1,0 @@
-model,person,roc_auc,pr_auc,f1,precision,recall,false_alarm_rate,weakest_attack,weakest_attack_recall,threshold,percentile
-Baseline: PCA,baseline,0.9380247739276931,0.8347228827982425,0.7613830879835672,0.9594477998274374,0.6311010215664018,0.0037493019916504905,ARP Spoofing,0.01,0.013432209631428075,99.0

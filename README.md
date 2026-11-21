@@ -77,8 +77,6 @@ models/
   denoising_ae/           Denoising AE (Omar)
   sparse_ae/              Sparse AE (Raghad)
   ae_isoforest/           AE + Isolation Forest (Nouf)
-results/
-  results.csv, figures/
 inference/                inference script and demo for the best model (Raghad)
 requirements.txt
 ```

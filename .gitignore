@@ -5,3 +5,6 @@
 __pycache__/
 .ipynb_checkpoints/
 .DS_Store
+
+# evaluation outputs written by the notebooks (results are reported in the README)
+results/
