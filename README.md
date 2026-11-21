@@ -10,7 +10,7 @@ We built one shared dataset and evaluation, then compared four autoencoder-based
 |---|---|---|
 | Jana | Data preparation, **Vanilla AE** | How much does a plain non-linear autoencoder improve on linear PCA? |
 | Omar | Shared evaluation, **Denoising AE** | Does training on noisy inputs improve detection? |
-| Raghad | Deployment (inference & demo), **Sparse AE** | Does an L1 penalty on the bottleneck improve detection? |
+| Raghad | Deployment, **Sparse AE** | Does an L1 penalty on the bottleneck improve detection? |
 | Nouf | PCA baseline, **AE + Isolation Forest** | Is the autoencoder's latent space a better signal than its reconstruction error? |
 
 The Denoising and Sparse autoencoders reuse the Vanilla AE architecture and training settings and add one change each, so any difference in results comes from that change alone.
