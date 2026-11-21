@@ -6,12 +6,12 @@ We built one shared dataset and evaluation, then compared four autoencoder-based
 
 ## Team
 
-| Member | Model | Question |
+| Member | Responsibilities | Model question |
 |---|---|---|
-| Jana | Data preparation, shared evaluation, PCA baseline, **Vanilla AE** | How much does a plain non-linear autoencoder improve on linear PCA? |
-| Omar | **Denoising AE** | Does training on noisy inputs improve detection? |
-| Raghad | **Sparse AE** | Does an L1 penalty on the bottleneck improve detection? |
-| Nouf | **AE + Isolation Forest** | Is the autoencoder's latent space a better signal than its reconstruction error? |
+| Jana | Data preparation, **Vanilla AE** | How much does a plain non-linear autoencoder improve on linear PCA? |
+| Omar | Shared evaluation, **Denoising AE** | Does training on noisy inputs improve detection? |
+| Raghad | Deployment (inference & demo), **Sparse AE** | Does an L1 penalty on the bottleneck improve detection? |
+| Nouf | PCA baseline, **AE + Isolation Forest** | Is the autoencoder's latent space a better signal than its reconstruction error? |
 
 The Denoising and Sparse autoencoders reuse the Vanilla AE architecture and training settings and add one change each, so any difference in results comes from that change alone.
 
@@ -21,7 +21,7 @@ All models use the same data and the same threshold rule: the 99th percentile of
 
 | Model | Member | ROC-AUC | PR-AUC | F1 | Precision | Recall | False alarms |
 |---|---|---|---|---|---|---|---|
-| PCA (baseline) | Jana | 0.938 | 0.835 | 0.761 | **0.959** | 0.631 | **0.37%** |
+| PCA (baseline) | Nouf | 0.938 | 0.835 | 0.761 | **0.959** | 0.631 | **0.37%** |
 | **Vanilla AE** | Jana | 0.955 | **0.903** | **0.888** | 0.934 | 0.847 | 0.84% |
 | Denoising AE | Omar | **0.961** | 0.903 | 0.840 | 0.829 | **0.850** | 2.46% |
 | Sparse AE | Raghad | *in progress* | | | | | |
@@ -70,15 +70,16 @@ data/
   01_data_prep.ipynb      data preparation (download, sampling, cleaning, scaling)
   README.md               dataset and preprocessing details
   train.npz, val.npz, test.npz, config.json
-evaluate.py               shared evaluation used by every model
+evaluate.py               shared evaluation used by every model (Omar)
 models/
-  baselines/              PCA baseline (Jana)
+  baselines/              PCA baseline (Nouf)
   dense_ae/               Vanilla AE: notebook, trained model, metadata (Jana)
   denoising_ae/           Denoising AE (Omar)
   sparse_ae/              Sparse AE (Raghad)
   ae_isoforest/           AE + Isolation Forest (Nouf)
 results/
   results.csv, figures/
+inference/                inference script and demo for the best model (Raghad)
 requirements.txt
 ```
 
