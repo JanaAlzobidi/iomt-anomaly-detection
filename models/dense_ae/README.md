@@ -27,7 +27,7 @@ A fully connected autoencoder trained on benign traffic only. Each row is compre
 
 Keras Tuner, Bayesian optimization, 25 trials of up to 25 epochs. The objective is `val_mse`, the reconstruction error on benign validation data, so no attack data is used to choose the architecture.
 
-The six best trials all use no dropout, and every trial with dropout 0.1 ranks in the bottom half: stronger regularization only increased the reconstruction error. The model is small (about 4,000 weights) compared with 150,000 training rows, so it underfits rather than overfits. A wider search with 100 trials found a model with lower validation error but the same F1 (0.886), so 25 trials were kept.
+The six best trials all use no dropout, and every trial with dropout 0.1 ranks in the bottom half: stronger regularization only increased the reconstruction error. The model is small (about 7,000 weights) compared with 150,000 training rows, so it underfits rather than overfits. A wider search with 100 trials found a model with lower validation error but the same F1 (0.886), so 25 trials were kept.
 
 ## Training
 
